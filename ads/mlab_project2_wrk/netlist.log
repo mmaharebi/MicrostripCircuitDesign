@@ -1,0 +1,58 @@
+; Top Design: "mlab_project2_lib:wilkinson3:schematic"
+; Netlisted using Hierarchy Policy: "Standard"
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="mlab_project2_lib:wilkinson3:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+MTEE_ADS:Tee1  N__1 N__17 N__0 Subst="MSub1" W1=w70 W2=w70 W3=w50 
+MLIN2:TL1  N__3 N__1 Subst="MSub1" W=w70 L=l1 Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MBEND:Bend1  N__4 N__3 Subst="MSub1" W=w70 Angle=90 M=0.6 
+MLIN2:TL2  N__4 N__5 Subst="MSub1" W=w70 L=l2 Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MBEND:Bend2  N__6 N__5 Subst="MSub1" W=w70 Angle=90 M=0.6 
+MLIN2:TL3  N__6 N__7 Subst="MSub1" W=w70 L=l3 Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MTEE_ADS:Tee2  N__8 N__7 N__9 Subst="MSub1" W1=wr W2=w70 W3=w50 
+#uselib "SMT_ResistorLibrary" , "srTfrDiscrete_19971030" 
+srTfrDiscrete_19971030:R1  N__8 N__10 family="sr_dal_CRCW_0603_J_19950814" PART_NUM=24 
+MTEE_ADS:Tee3  N__11 N__10 N__12 Subst="MSub1" W1=w70 W2=wr W3=w50 
+MLIN2:TL4  N__11 N__13 Subst="MSub1" W=w70 L=l3 Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MBEND:Bend3  N__14 N__13 Subst="MSub1" W=w70 Angle=90 M=0.6 
+MLIN2:TL5  N__15 N__14 Subst="MSub1" W=w70 L=l2 Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MBEND:Bend4  N__16 N__15 Subst="MSub1" W=w70 Angle=90 M=0.6 
+MLIN2:TL6  N__17 N__16 Subst="MSub1" W=w70 L=l1 Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MLIN2:TL7  N__2 N__0 Subst="MSub1" W=w50 L=l50 Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MLIN2:TL8  N__9 N__18 Subst="MSub1" W=w50 L=l50 Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MLIN2:TL9  N__12 N__19 Subst="MSub1" W=w50 L=l50 Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+Port:TermG1  N__2 0 Num=1 Z=50 Ohm Noise=yes 
+Port:TermG2  N__18 0 Num=2 Z=50 Ohm Noise=yes 
+Port:TermG3  N__19 0 Num=3 Z=50 Ohm Noise=yes 
+
+w50=1.097940 mm
+
+w70=0.579707 mm
+
+l50=21.55790 mm
+
+l70=22.155400 mm
+
+wr=0.76200000 mm
+
+lr=1.524 mm
+
+l1=6.985832 mm tune{ 2.49494 mm to 7.48482 mm by 0.498988 mm }
+
+l2=11.0777 mm tune{ 5.53885 mm to 16.61655 mm by 1.10777 mm }
+
+l3=4.414692 mm tune{ 1.839455 mm to 5.518365 mm by 0.367891 mm }
+model MSub1 MSUB H=20 mil Er=3.55 Mur=1 Cond=1.0E+50 Hu=1e+33 mm T=35 um TanD=0.0027 Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=1 GHz Stop=3 GHz Step=1 MHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2

@@ -1,0 +1,4 @@
+INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
+INCLUDE $HPEESOF_DIR/oalibs/dsp.defs
+DEFINE mlab_project2_lib mlab_project2_lib
+ASSIGN mlab_project2_lib libMode shared

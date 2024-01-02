@@ -1,0 +1,9 @@
+<!DOCTYPE SaveWorkspaceState>
+<SaveWorkspaceState>
+    <Windows>
+        <Schematic width="1920" cell="wilkinson" view="schematic" y1="-8" geom="1,0,2,59,78,1536,824,1920,1080" lib="mlab_project2_lib" height="1017" x1="-1"/>
+        <Schematic width="1920" cell="wilkinson_schematic" view="schematic" y1="-8" geom="1,0,2,79,98,1536,824,1920,1080" lib="mlab_project2_lib" height="1017" x1="-1"/>
+        <Schematic width="1920" cell="wilkinson2" view="schematic" y1="-8" geom="1,0,2,99,118,1536,824,1920,1080" lib="mlab_project2_lib" height="1017" x1="-1"/>
+    </Windows>
+    <MainWindowTab tab="1"/>
+</SaveWorkspaceState>

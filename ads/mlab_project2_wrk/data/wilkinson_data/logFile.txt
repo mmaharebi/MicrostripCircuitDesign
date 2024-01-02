@@ -1,0 +1,17 @@
+
+hpeesofsim (*) 550.update0.1 Aug 21 2021, MINT version 5
+    (64-bit windows built: Fri Aug 20, 2021 18:45:04 +0000)
+
+
+***** Simulation started at Tue Jun 21 10:57:03 2022
+      Running on host: "DESKTOP-M63ASI7"
+      In Directory: "D:\education\mlab\project2\ads\mlab_project2_wrk\data"
+      Process ID: 2688
+
+
+SP SP1[1] <mlab_project2_lib:wilkinson:schematic>   freq=(1 GHz->3 GHz)
+
+
+Resource usage:
+  Total stopwatch time     =     1.21 seconds.
+
